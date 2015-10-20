@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat!</title>
+    <!--<link rel="stylesheet" type="text/css" href="/style.css" />-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/chat.js"></script>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+<body>
+    <h1>Chat!</h1>
+    <form action="/post" method="post" id="message-form">
+        <input type="text" placeholder="say something" name="message" id="message-input" />
+        <input type="submit" name="sayit" id="sendbutton" />
+    </form>
+    <ul id="messages">
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
